@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int i, j;
+int i, j, key;
 int seq[] = {2,7,9,4,1,5,3,6,0,8};
 int n = (sizeof(seq)/sizeof(int));
 
@@ -12,18 +12,36 @@ int main(){
 //bubble sort
     int x;
 
-    for(i = 1; i <= n-1; i++){
+    /*for(i = 1; i <= n-1; i++){
         for(j=0; j <= n-i-1; j++){
             if(seq[j] > seq[j+1]){
                 swap(seq[j], seq[j+1]);
+                //cout << seq[4];
             }
 
         }
 
     }
 
-   //Show the reordered array on screen
    for(x = 0; x < n; x++){
+    cout << seq[x]<<endl;
+    } */
+
+//insertion sort
+    for(i= 1; i < n; i++){
+        key = seq[i];
+        j = i - 1;
+        // when I changed j from j>0 to j>=0 it sorted everything in the list rather than just from the seq[1]
+        // code still ran but didn't run the search correctly
+
+        while(j  >= 0 && (seq[j]>key)){
+            seq[j+1] = seq[j];
+            j = j-1;
+        }
+        seq[j+1] = key;
+    }
+
+    for(x = 0; x < n; x++){
     cout << seq[x]<<endl;
     }
 
