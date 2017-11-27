@@ -1,0 +1,107 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <stdio.h>
+#include <string.h>
+using namespace std;
+string s2;
+string s1;
+int x, c ,y;
+//int c;
+
+//int s1.at(x);
+
+/* void rs1c(string a){
+    for(x=0; x < s1.length(); x++){
+            //c = s1.at(x);
+            //cout << s1.at(x);
+
+
+            char c = s1.at(x);
+
+            /*for(y = x, x< s1.length(), x++)){
+            s2 = s1.substr(x,(x + 1));
+            //c = c+1;
+            cout << s2;
+            //x = x +1;
+            }
+
+            for(x = 0; x < s1.length(); x++){
+                char s1c = s1[x];
+                if(s1[" "] == " "){
+                        cout << "works";
+                    }
+
+                cout << c;
+            }
+
+
+
+            if(x>0){
+                s2 = s1.substr(x, (x+1));
+                 cout << s2;
+
+            }
+
+            // how are you prints uoy era woh at(x) is printing out character at x x being the number i need the character
+
+
+        }
+
+   // for(y = 0; y<s1.length(); y++){
+
+   // }
+
+
+
+        //char s2c = s1c;
+        //char* s1c =s2c;
+
+    } */
+
+
+
+
+
+
+int main(){
+
+    cout << "Please enter a sentence" <<endl;
+
+    getline(cin, s1);
+
+
+    //const char* sp = " ";
+
+
+    reverse(s1.begin(), s1.end());
+    //s2 = s1.substr(c,5);
+
+    //cout << s2<< endl;
+
+     //if(rs1c(s1)==sp){}
+    //rs1c(s1);
+
+    //for(x = 0; x < s1.length(); x++){
+
+
+            //s2.insert(5,s1);
+
+
+
+    //make integers from characters and do a quick print out test
+
+
+
+
+    //s1.insert()
+
+
+
+    cout<<s1<<endl;
+    //cout<<s1.at(5);
+
+
+
+return 0;
+}
