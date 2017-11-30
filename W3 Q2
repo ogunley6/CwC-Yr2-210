@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int x;
+int arrayS [] = {93,67,82,100,45,54,90,22,9};
+
+//Calculation to work out the size of the array.
+int arraySize = sizeof(arrayS)/sizeof(int);
+int searchV; //User Value
+
+linearSearch(int arrayS[], int searchV){
+    for(x = 0; x < arraySize; x++){
+        if(searchV == arrayS[x]){
+            return true;
+        }
+    }
+}
+
+
+int main(){
+    cout << "Please search for a value." << endl;
+    cin >> searchV;
+
+    int searchResult = linearSearch(arrayS, searchV);
+
+    if(searchResult == 1){
+        cout << "True" << endl;
+    }
+
+    else{
+        cout << "False" << endl;
+    }
+
+return 0;
+}
