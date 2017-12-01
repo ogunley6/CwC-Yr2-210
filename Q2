@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+string userNo;
+int x, y, c;
+vector <int> userInputV = {};
+vector <int> reverseCheck = {};
+
+int main(){
+    cout << "Please enter a number to see if it is a palindrome" << endl;
+    cin >> userNo;
+
+
+    for(y = 0; y < userInputV.size(); y++){
+        cout << userInputV[y] - '0' << " ";
+
+        if(y == userInputV.size()){
+            cout << userInputV[y] - '0' << endl;
+        }
+    }
+
+    reverse(userInputV.begin(), userInputV.end());
+    for(y = 0; y < userInputV.size(); y++){
+        cout << userInputV[y] - '0' << " ";
+    }
+
+
+
+    for(c = 0; x < userInputV.size(); c++){
+        reverseCheck.push_back(userInputV[c]);
+    }
+
+
+
+    if(userInputV == reverseCheck){
+        cout << "Yes" << endl;
+    }
+
+    else if (userInputV != reverseCheck){
+        cout << "No" << endl;
+    }
+
+
+
+    return 0;
+}
