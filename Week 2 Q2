@@ -1,19 +1,28 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
 //Polynomial 1 & 2
 //string p1, p2;
-string p1;
-string p2;
+
 
 
 //Variables to read the coefficients of polynomial 1
 int p1x3, p1x3p, p1x3n, p1x2, p1x2p, p1x2n, p1x, p1xp, p1xn, p1nc, p1np, p1n;
 
 //Variables to read the coefficients of polynomial 2
-int p2x3, p2x3p, p2x3n, p2x2, p2x2p, p2x2n, p2x, p2xp, p2xn, p2nc, p2np, p2n;
+int p2x3, p2x3p, p2x3n, p2x2, p2x2p, p2x2n, p2x, p2xp, p2xn, p2nc, p2np, p2n, i, j, temp, n;
+//int p1ArrayReverse[4];
+vector <int> res[] = {};
+int p2ArrayReverse[4] = {};
+int arrayp1Size;
+int arrayp2Size;
+int p1ArrayReverse[] = {p1n, p1xn, p1x2n, p1x3n};
+string p1 = "2x3 + 1x2 + 2x + 1";
+string p2 = "3x2 + 1x + 9";
+
 
 
 void poly1Res(string polynomialOne){
@@ -41,13 +50,14 @@ void poly1Res(string polynomialOne){
     p1n = p1[p1np] - '0';
 
     int p1Array[] = {p1x3n, p1x2n, p1xn, p1n};
-    int arraySize = sizeof(p1Array)/ sizeof(int);
+    //int p1ArrayReverse[] = {p1n, p1xn, p1x2n, p1x3n};
+    int arrayp1Size = sizeof(p1Array)/ sizeof(int);
+    int degreep1 = arrayp1Size - 1;
 
     //cout << arraySize << endl;
 
-
-    cout << "[";
-    for(int x = 0; x < arraySize; x++){
+    cout << "Degree = " << degreep1 << "    " << "[";
+    for(int x = 0; x < arrayp1Size; x++){
         cout << p1Array[x] << ", ";
 
         //To make the array look neat
@@ -80,13 +90,14 @@ void poly2Res(string polynomialOne){
     p2n = p2[p2np] - '0';
 
     int p2Array[] = {p2x2n, p2xn, p2n};
-    int arraySize = sizeof(p2Array)/ sizeof(int);
+    int p2ArrayReverse[] = {p2n, p2xn, p2x2n};
+    int arrayp2Size = sizeof(p2Array)/ sizeof(int);
+    int degreep2 = arrayp2Size - 1;
 
     //cout << arraySize << endl;
 
-
-    cout << "[";
-    for(int x = 0; x < arraySize; x++){
+    cout << "Degree = " << degreep2 << "    " << "[";
+    for(int x = 0; x < arrayp2Size; x++){
         cout << p2Array[x] << ", ";
 
         //To make the array look neat
@@ -94,21 +105,39 @@ void poly2Res(string polynomialOne){
             cout << p2Array[2] << "]"<< endl;
             x=3;
         }
+        
+        return p2Array
 
     }
 
 }
-`
+
+ resFunction(){
+    for(i = 0; i < arrayp1Size; i++){
+            for(j = 0; j < arrayp2Size; j++){
+                res[i + j] = (arrayp1Size[i] + arrayp2Size[j]) + (p1ArrayReverse[i] * p2ArrayReverse[j]);
+            }
+            return res[];
+    }
+}
+
+
+
 int main()
 {
-    cout << "Please enter a polynonmial in the format ax3 + bx2 + cx +d" <<endl;
+    /*cout << "Please enter a polynonmial in the format ax3 + bx2 + cx + d" <<endl;
     getline(cin, p1);
 
     cout << "Now please enter a 2nd polynomial in the format ax2 + bx + c" <<endl;
-    getline(cin, p2);
+    getline(cin, p2);*/
+
+    string p1 = "2x3 + x2 + 2x + 1";
+    string p2 = "3x2 + 1x + 9";
 
     poly1Res(p1);
     poly2Res(p2);
+
+    resFunction();
 
     return 0;
 }
