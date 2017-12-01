@@ -1,38 +1,22 @@
 #include <iostream>
 #include <string>
-#include <stdio.h>
-#include <string.h>
-#include <algorithm>
 
 using namespace std;
 
 //Polynomial 1 & 2
-string p1, p2;
+//string p1, p2;
+string p1;
+string p2;
+
 
 //Variables to read the coefficients of polynomial 1
 int p1x3, p1x3p, p1x3n, p1x2, p1x2p, p1x2n, p1x, p1xp, p1xn, p1nc, p1np, p1n;
 
 //Variables to read the coefficients of polynomial 2
-int p1x3, p1x3p, p1x3n, p1x2, p1x2p, p1x2n, p1x, p1xp, p1xn, p1nc, p1np, p1n;
+int p2x3, p2x3p, p2x3n, p2x2, p2x2p, p2x2n, p2x, p2xp, p2xn, p2nc, p2np, p2n;
 
 
-
-
-
-/* void findPol(string p1){
-    char* S = new char[p1.length() + 1];
-    strcpy(S, p1.c_str());
-
-    for(x=0; x < p1.length(); x++){
-        y = p1.find("x2");
-        cout << y << endl;
-        }
-} */
-
-int main()
-{
-    p1 = "3x3 + 5x2 + 4x + 2";
-    p2 = "5x2 + 8x + 3";
+void poly1Res(string polynomialOne){
 
     p1x3 = p1.find("x3");
     p1x3p = p1x3 - 1;
@@ -56,15 +40,75 @@ int main()
     p1np = p1nc + 2;
     p1n = p1[p1np] - '0';
 
+    int p1Array[] = {p1x3n, p1x2n, p1xn, p1n};
+    int arraySize = sizeof(p1Array)/ sizeof(int);
+
+    //cout << arraySize << endl;
 
 
+    cout << "[";
+    for(int x = 0; x < arraySize; x++){
+        cout << p1Array[x] << ", ";
+
+        //To make the array look neat
+        if( x == 2){
+            cout << p1Array[3] << "]"<< endl;
+            x=4;
+        }
+
+    }
+
+}
+
+void poly2Res(string polynomialOne){
+
+    p2x2 = p2.find("x2");
+    p2x2p = p2x2 - 1;
+    p2x2n = p2[p2x2p] - '0';
+
+    // To find the number ax3 + bx2 + cx + d
+    // Therefore to find c
+
+    p2x = p2.find_last_of("x");
+    p2xp = p2x - 1;
+    p2xn = p2[p2xp] - '0';
+
+    // To find the number bx2 + cx + d
+    // Therefore to find d
+    p2nc = p2.find_last_of("+");
+    p2np = p2nc + 2;
+    p2n = p2[p2np] - '0';
+
+    int p2Array[] = {p2x2n, p2xn, p2n};
+    int arraySize = sizeof(p2Array)/ sizeof(int);
+
+    //cout << arraySize << endl;
 
 
-    cout << p1x3n << "," << p1x2n << "," << p1xn << "," << p1n << endl;
+    cout << "[";
+    for(int x = 0; x < arraySize; x++){
+        cout << p2Array[x] << ", ";
 
-    //findPol(p1);
+        //To make the array look neat
+        if( x == 1){
+            cout << p2Array[2] << "]"<< endl;
+            x=3;
+        }
 
+    }
 
+}
+`
+int main()
+{
+    cout << "Please enter a polynonmial in the format ax3 + bx2 + cx +d" <<endl;
+    getline(cin, p1);
+
+    cout << "Now please enter a 2nd polynomial in the format ax2 + bx + c" <<endl;
+    getline(cin, p2);
+
+    poly1Res(p1);
+    poly2Res(p2);
 
     return 0;
 }
