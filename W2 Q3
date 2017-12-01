@@ -1,0 +1,47 @@
+Polynomial1: 2x3 + 1x2 + 2x + 1
+Polynomial2: 6x2 + 2x + 2
+
+Polynomial1Differential(Polynomial1)
+	x3coefficientPlace <- Polynomial1.find("x3")
+	x3coefficient1<- x3coefficient -1
+	x3coefficient<- Polynomial1[x3coefficient1]
+
+	x2coefficientPlace <- Polynomial1.find("x2")
+	x2coefficient1<- x2coefficient -1
+	x2coefficient<- Polynomial1[x2coefficient1]
+
+	xcoefficientPlace <- Polynomial1.findlastof("x")
+	xcoefficient1<- xcoefficient -1
+	xcoefficient<- Polynomial1[xcoefficient1]
+
+
+	polynomialNoPlace <- Polynomial1.findlastof("+")
+	polynomialNo1<- polynomialNoPlace + 2
+	polynomialNo<- Polynomial1[polynomialNo]
+
+	polynomial1Array <- {x3cofficient, x2cofficient, xcofficient, PolynomialNo}
+	x3Diff <- polynomial1Array[x3cofficient] * 3
+	x2Diff <- polynomial1Array[x2cofficient] * 2
+	xDiff <- polynomial1Array[xcofficient]
+	
+	print x3Diff "x2", x2Diff "x", xDiff
+
+Polynomial2Differential(Polynomial2)
+	x2coefficientPlace <- Polynomial2.find("x2")
+	x2coefficientp2<- x2coefficient -1
+	x2coefficient2<- Polynomial2[x2coefficientp2]
+
+	xcoefficientPlace <- Polynomial2.findlastof("x")
+	xcoefficientp2<- xcoefficient -1
+	xcoefficient2<- Polynomial2[xcoefficientp2]
+
+	polynomialNoPlace <- Polynomial1.findlastof("+")
+	polynomialNo1<- polynomialNoPlace + 2
+	polynomial2No<- Polynomial2[polynomialNo]
+
+	polynomial2Array <- {x2cofficient2, xcofficient2, Polynomial2No}
+	x2Diff <- polynomial2Array[x2cofficient2] * 2
+	xDiff <- polynomial2Array[xcofficient2]
+	
+	
+	print x2Diff "x", xDiff
