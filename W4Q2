@@ -1,0 +1,82 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+int b, x, y, low, mid, high, result, searchValue;
+string userValue;
+
+vector<int> tenKV;
+int tenK[10000] = {};
+
+int binarySearch(int searchValue, vector <int> tenKV){
+    low = 0;
+    high = tenKV.size() - 1;
+
+
+    while(low <= high){
+
+          mid = (low + high)/2;
+
+        if(searchValue == tenKV[mid]){
+                return mid;
+                cout << "The number " << tenKV[result] << " was found at the"
+                " element with index " << result << endl;
+        }
+
+           else if(searchValue > tenKV[mid]){
+            low = mid +1;
+           }
+
+           else{
+                high = mid - 1;
+           }
+    }
+
+    return -1;
+}
+
+int binaryQuestion (vector <int> tenKV){
+    low = 0;
+    high = tenKV.size() - 1;
+
+    while(low <= high){
+        mid = (low + high)/2;
+
+        cout << "Is the number you are thinking of "  << tenKV[mid] << " or is it bigger (>) or smaller (<)? \n";
+        cout << "Please enter '>' for bigger, '< 'for smaller or 'y' if your number is in fact " << tenKV[mid] <<"." << endl;
+
+        cin >> userValue;
+
+
+    if(userValue == ">"){
+        low = mid + 1;
+    }
+
+    else if(userValue == "<"){
+        high = mid - 1;
+    }
+
+    else{
+        low = high + 1;
+        cout << "I have found the number " << tenKV[mid] << " that you was thinking of, thanks for playing :)." << endl;
+        }
+
+    }
+    return 1;
+}
+
+int main(){
+//First make an array of 9999 elements numbers 1 - 10K in order
+
+    for(x = 1; x <= 20000; x++){
+        tenKV.push_back(x);
+    }
+
+    cout << "Think of a number between 1 and 20000 \n";
+    //cout << "Is your number bigger (>) or smaller (<) than 10000? \n";
+    //cout << "Please enter > for bigger or < for smaller.";
+
+    binaryQuestion(tenKV);
+
+return 0;
+}
