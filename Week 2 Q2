@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+#include <stdio.h>
+#include <string.h>
+#include <algorithm>
+
+using namespace std;
+
+//Polynomial 1 & 2
+string p1, p2;
+
+//Variables to read the coefficients of polynomial 1
+int p1x3, p1x3p, p1x3n, p1x2, p1x2p, p1x2n, p1x, p1xp, p1xn, p1nc, p1np, p1n;
+
+//Variables to read the coefficients of polynomial 2
+int p1x3, p1x3p, p1x3n, p1x2, p1x2p, p1x2n, p1x, p1xp, p1xn, p1nc, p1np, p1n;
+
+
+
+
+
+/* void findPol(string p1){
+    char* S = new char[p1.length() + 1];
+    strcpy(S, p1.c_str());
+
+    for(x=0; x < p1.length(); x++){
+        y = p1.find("x2");
+        cout << y << endl;
+        }
+} */
+
+int main()
+{
+    p1 = "3x3 + 5x2 + 4x + 2";
+    p2 = "5x2 + 8x + 3";
+
+    p1x3 = p1.find("x3");
+    p1x3p = p1x3 - 1;
+    //'-0' converts character into an integer
+    p1x3n = p1[p1x3p] - '0';
+
+    p1x2 = p1.find("x2");
+    p1x2p = p1x2 - 1;
+    p1x2n = p1[p1x2p] - '0';
+
+    // To find the number ax3 + bx2 + cx + d
+    // Therefore to find c
+
+    p1x = p1.find_last_of("x");
+    p1xp = p1x - 1;
+    p1xn = p1[p1xp] - '0';
+
+    // To find the number ax3 + bx2 + cx + d
+    // Therefore to find d
+    p1nc = p1.find_last_of("+");
+    p1np = p1nc + 2;
+    p1n = p1[p1np] - '0';
+
+
+
+
+
+    cout << p1x3n << "," << p1x2n << "," << p1xn << "," << p1n << endl;
+
+    //findPol(p1);
+
+
+
+    return 0;
+}
