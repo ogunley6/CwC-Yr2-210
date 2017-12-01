@@ -2,50 +2,50 @@ Polynomial1: 3x2 + x + 9
 Polynomial2: 2x3 + 1x2 + 2x +1
 
 Polynomial1Array(Polynomial1)
-x3coefficientPlace <- Polynomial1.find("x3")
-x3coefficient1<- x3coefficient -1
-x3coefficient<- Polynomial1[x3coefficient1]
+	x3coefficientPlace <- Polynomial1.find("x3")
+	x3coefficient1<- x3coefficient -1
+	x3coefficient<- Polynomial1[x3coefficient1]
 
-x2coefficientPlace <- Polynomial1.find("x2")
-x2coefficient1<- x2coefficient -1
-x2coefficient<- Polynomial1[x2coefficient1]
+	x2coefficientPlace <- Polynomial1.find("x2")
+	x2coefficient1<- x2coefficient -1
+	x2coefficient<- Polynomial1[x2coefficient1]
 
-xcoefficientPlace <- Polynomial1.findlastof("x")
-xcoefficient1<- xcoefficient -1
-xcoefficient<- Polynomial1[xcoefficient1]
+	xcoefficientPlace <- Polynomial1.findlastof("x")
+	xcoefficient1<- xcoefficient -1
+	xcoefficient<- Polynomial1[xcoefficient1]
 
 
-polynomialNoPlace <- Polynomial1.findlastof("+")
-polynomialNo1<- polynomialNoPlace + 2
-polynomialNo<- Polynomial1[polynomialNo]
+	polynomialNoPlace <- Polynomial1.findlastof("+")
+	polynomialNo1<- polynomialNoPlace + 2
+	polynomialNo<- Polynomial1[polynomialNo]
 
-polynomial1Array <- {x3cofficient, x2cofficient, xcofficient, PolynomialNo}
-Degree1<- (SizeOf(polynomialArray)/sizeof(int)) - 1
-print Degree
+	polynomial1Array <- {x3cofficient, x2cofficient, xcofficient, PolynomialNo}
+	Degree1<- (SizeOf(polynomialArray)/sizeof(int)) - 1
+	print Degree
 
 
 Polynomial2Array(Polynomial2)
-x2coefficientPlace <- Polynomial2.find("x2")
-x2coefficientp2<- x2coefficient -1
-x2coefficient2<- Polynomial2[x2coefficientp2]
+	x2coefficientPlace <- Polynomial2.find("x2")
+	x2coefficientp2<- x2coefficient -1
+	x2coefficient2<- Polynomial2[x2coefficientp2]
 
-xcoefficientPlace <- Polynomial2.findlastof("x")
-xcoefficientp2<- xcoefficient -1
-xcoefficient2<- Polynomial2[xcoefficientp2]
+	xcoefficientPlace <- Polynomial2.findlastof("x")
+	xcoefficientp2<- xcoefficient -1
+	xcoefficient2<- Polynomial2[xcoefficientp2]
 
-polynomialNoPlace <- Polynomial1.findlastof("+")
-polynomialNo1<- polynomialNoPlace + 2
-polynomial2No<- Polynomial2[polynomialNo]
+	polynomialNoPlace <- Polynomial1.findlastof("+")
+	polynomialNo1<- polynomialNoPlace + 2
+	polynomial2No<- Polynomial2[polynomialNo]
 
-polynomial2Array <- {x2cofficient2, xcofficient2, Polynomial2No}
-Degree2<- (SizeOf(polynomialArray)/sizeof(int)) - 1
-print Degree
+	polynomial2Array <- {x2cofficient2, xcofficient2, Polynomial2No}
+	Degree2<- (SizeOf(polynomialArray)/sizeof(int)) - 1
+	print Degree
 
 
 
-PolynomialAddition(Polynomial1, Polynomial 2)
-resultantArray[] <- {x3coefficient1, (x2coefficient +  x2coefficient2), (x2coefficient + xcoefficient2), (polynomialNo + polynomial2No)
-print resultantArray
+	PolynomialAddition(Polynomial1, Polynomial 2)
+	resultantArray[] <- {x3coefficient1, (x2coefficient +  x2coefficient2), (x2coefficient + xcoefficient2), (polynomialNo + polynomial2No)
+	print resultantArray
 
-ResultantDegree <- Degree1 + Degree2
-print ResultantDegree
+	ResultantDegree <- Degree1 + Degree2
+	print ResultantDegree
